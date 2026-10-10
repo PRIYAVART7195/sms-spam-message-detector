@@ -1,7 +1,4 @@
-"""Shared data loading, feature engineering, model definitions and inference helpers.
 
-Used by train_model.py, predict.py and app.py so all three behave identically.
-"""
 from __future__ import annotations
 
 import re
@@ -27,7 +24,7 @@ LABEL_MAP = {"legitimate": "ham", "not spam": "ham", "junk": "spam"}
 RANDOM_STATE = 42
 
 
-# --------------------------------------------------------------------------- data
+
 def load_data(path: Path = DATA_PATH, dedupe: bool = True) -> pd.DataFrame:
     """Load and clean the dataset.
 
@@ -50,7 +47,7 @@ def load_data(path: Path = DATA_PATH, dedupe: bool = True) -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
-# ----------------------------------------------------------------------- features
+
 _URL = re.compile(r"(https?://|www\.|\b\w+\.(com|co\.uk|net|org|info|biz)\b)", re.I)
 _PHONE = re.compile(r"\b\d{5,}\b")
 _MONEY = re.compile(r"[£$€]|\b(?:rs|inr)\.?\s?\d", re.I)
@@ -107,7 +104,7 @@ def build_candidates() -> dict[str, Pipeline]:
     }
 
 
-# ---------------------------------------------------------------------- inference
+
 def load_bundle(path: Path = MODEL_PATH) -> dict:
     """Load the saved bundle: {'pipeline', 'threshold', 'model_name', 'metrics'}."""
     return joblib.load(path)
