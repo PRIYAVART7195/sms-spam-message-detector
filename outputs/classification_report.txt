@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+         ham      0.994     0.999     0.997       904
+        spam      0.992     0.961     0.976       128
+
+    accuracy                          0.994      1032
+   macro avg      0.993     0.980     0.986      1032
+weighted avg      0.994     0.994     0.994      1032

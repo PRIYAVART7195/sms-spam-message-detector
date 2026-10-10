@@ -1,0 +1,29 @@
+{
+  "selected_model": "logistic_regression",
+  "threshold": 0.4787611657135722,
+  "min_precision": 0.98,
+  "rows_raw": 5574,
+  "rows_clean": 5160,
+  "duplicates_removed": 414,
+  "train_examples": 4128,
+  "test_examples": 1032,
+  "class_counts": {
+    "ham": 4518,
+    "spam": 642
+  },
+  "test": {
+    "accuracy": 0.9941860465116279,
+    "precision_spam": 0.9919354838709677,
+    "recall_spam": 0.9609375,
+    "f1_spam": 0.9761904761904762
+  },
+  "roc_auc": 0.999222206858407,
+  "confusion_matrix": {
+    "tn": 903,
+    "fp": 1,
+    "fn": 5,
+    "tp": 123
+  },
+  "folds": 5,
+  "random_state": 42
+}
