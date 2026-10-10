@@ -1,8 +1,4 @@
-"""Streamlit dashboard for the SMS Spam Detector.
 
-The app loads the pre-trained model from outputs/ (instant start-up). If it is missing it
-trains one automatically the first time and caches it.   Run:  streamlit run app.py
-"""
 import json
 import subprocess
 import sys
