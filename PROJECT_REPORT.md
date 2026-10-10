@@ -1,13 +1,12 @@
 # SMS Spam Message Detector
 ## AIML Minor Project Report
 
-**Student:** [Your Name]  
-**Roll Number:** [Your Roll Number]  
-**Course / Branch:** [Course and Branch]  
-**Semester:** [Semester]  
-**Institute:** [College Name]  
-**Guide:** [Faculty Guide]  
-**Academic Year:** [Academic Year]
+**Student:** [PRIYA VART KUMAR PRIYANSHU]  
+**ERP:** [6606467]  
+**Course / Branch:** [BTECH CSE]  
+**Semester:** [5TH]  
+**Institute:** [RUNGTA COLLEGE OF ENGG TECH]  
+
 
 ## Abstract
 SMS spam can expose users to scams, unwanted advertising, and fraudulent links. This project develops a supervised machine-learning prototype that classifies a text message as spam or legitimate (ham). The text is represented with Term Frequency–Inverse Document Frequency (TF-IDF) features. Word and character n-gram TF-IDF features are combined with hand-crafted text cues, and Multinomial Naive Bayes, Logistic Regression and a calibrated Linear SVM are compared by 5-fold cross-validation on training data. The selected model (Logistic Regression) has its decision threshold tuned for high spam precision and is evaluated once on a held-out test set of 1,032 unique messages, reaching 99.4% accuracy, 99.2% spam precision, 96.1% spam recall and a spam F1 of 0.976. The model is served through a Streamlit dashboard with word-level explanations and batch scoring, and through a command-line tool. A data-leakage problem in the original design (414 duplicate messages shared between train and test) was found and corrected.
