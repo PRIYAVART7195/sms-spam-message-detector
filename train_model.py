@@ -1,16 +1,4 @@
-"""Train, compare, tune and save the SMS spam classifier.
 
-Pipeline
-  1. Load + clean data (exact duplicate messages removed to avoid train/test leakage).
-  2. Stratified 80/20 split. The test set is touched only once, at the very end.
-  3. Every candidate is scored with 5-fold cross-validation on the TRAINING data only.
-  4. The best candidate (by CV spam-F1) gets a decision threshold tuned on its
-     out-of-fold probabilities (max F1 subject to spam precision >= MIN_PRECISION,
-     because wrongly blocking a real message is the costlier mistake).
-  5. Final evaluation on the held-out test set, artifacts written to outputs/.
-
-Usage:  python train_model.py [--data PATH] [--folds 5] [--min-precision 0.98]
-"""
 from __future__ import annotations
 
 import argparse
