@@ -88,7 +88,7 @@ def main() -> None:
     comp = pd.DataFrame(rows)
     comp.to_csv(OUT_DIR / "model_comparison.csv", index=False)
 
-    # Selection uses cross-validation only (never the test set); baseline is excluded.
+   
     best_name = comp[comp.model != "baseline_tfidf_lr"].sort_values("cv_f1_spam_tuned", ascending=False).iloc[0].model
     best, threshold = candidates[best_name], oof[best_name][1]
     p_te = spam_probability(best, X_te)
@@ -125,8 +125,7 @@ def main() -> None:
     }
     (OUT_DIR / "metrics.json").write_text(json.dumps(metrics, indent=2))
 
-    # Deployment model: same recipe refit on all cleaned data (test metrics above are from
-    # the train-only fit, so they are an honest estimate for this recipe).
+    
     deploy = build_candidates()[best_name] if best_name in build_candidates() else best
     deploy.fit(df.message, df.label)
     joblib.dump({"pipeline": deploy, "threshold": threshold, "model_name": best_name,
