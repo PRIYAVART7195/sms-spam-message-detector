@@ -1,8 +1,4 @@
-"""Command-line spam checker.
 
-  python predict.py "You have won a free prize, call now"
-  python predict.py --file messages.csv --column message --out results.csv
-"""
 import argparse
 import sys
 
